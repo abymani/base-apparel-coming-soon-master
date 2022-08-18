@@ -5,29 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./index.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <div class="logo">
+    <img src="./images/logo.svg" alt="Base apprael logo" height="25px" width="120px">
+  </div>
+  <main>
 
-  We're coming soon
-
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+    <div class="content-container">
+      <h1 class="heading"><span class="text-were"> We're</span> <br> <span class="text-coming">coming <br> soon</span></h1> 
+    
+    <p class="paragraph">
+      Hello fellow shoppers! We're currently building our new fashion store. 
+      Add your email below to stay up-to-date with announcements and our launch deals.  
     </p>
-  </footer>
+    <form action="./thankyou.html" autocomplete="on" name="form"  onsubmit="return ValidateEmail(email);">  
+      <div class="email-container">
+        <input type="text" id="email-input" name="email" value="Email Address" onfocus="this.value=this.value == 'Email Address'?'': this.value;" onblur="this.value=this.value ==''?'Email Address':this.value" size="25">
+        <img id="error-icon" src="./images/icon-error.svg" alt="">
+        <input type="submit" class="submit" value="" >
+      </div>
+      <p id="error">&nbsp;</p>
+    </form>
+    
+  </div>
+  <picture class="image-container">
+    <source media="(min-width: 510px)" srcset="./images/hero-desktop.jpg" >
+    <source media="(min-width: 100px)" srcset="./images/hero-mobile.jpg">
+    <img src="./images/hero-desktop.jpg" alt="hero desktop" width="auto" height="100%">
+  </picture>
+  </main>
 </body>
+<script src="./index.js"></script>
 </html>
